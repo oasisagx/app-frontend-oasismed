@@ -15,13 +15,6 @@ Configure these in Vercel Project Settings > Environment Variables:
 
 ### Current Values (for reference)
 
-```env
-VITE_API_BASE_URL=https://vxfnw2ane5.execute-api.sa-east-1.amazonaws.com
-VITE_COGNITO_USER_POOL_ID=sa-east-1_AQwN1JaVZ
-VITE_COGNITO_CLIENT_ID=58vhdo6p4bnipujsk2p2pdqsq
-VITE_COGNITO_REGION=sa-east-1
-```
-
 ## 🔗 Routes
 
 After deployment, your app will be available at:
