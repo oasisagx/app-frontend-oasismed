@@ -13,8 +13,6 @@ Configure these in Vercel Project Settings > Environment Variables:
 | `VITE_COGNITO_CLIENT_ID` | Cognito App Client ID | `xxxxxxxxxxxxxxxxxxxx` |
 | `VITE_COGNITO_REGION` | AWS Region | `sa-east-1` |
 
-### Current Values (for reference)
-
 ## 🔗 Routes
 
 After deployment, your app will be available at:
