@@ -1,0 +1,191 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  font-family: 'Inter', 'Montserrat', sans-serif;
+}
+
+:root {
+  /* Fundo "gelo" MAIS sutil ainda - quase imperceptível */
+  --background: 252 253 254;           /* #FCFDFE - gelo quase invisível */
+  --foreground: 15 23 42;              /* #0f172a - texto principal bem escuro */
+  --card: 255 255 255;                 /* #ffffff - cards brancos puros */
+  --card-foreground: 15 23 42;         /* #0f172a */
+  --popover: 255 255 255;              /* #ffffff */
+  --popover-foreground: 15 23 42;      /* #0f172a */
+  --primary: 91 154 225;               /* #5B9AE1 - azul Oasis */
+  --primary-foreground: 255 255 255;   /* #ffffff */
+  --secondary: 248 250 252;            /* #f8fafc */
+  --secondary-foreground: 71 85 105;   /* #475569 */
+  --muted: 248 250 252;                /* #f8fafc */
+  --muted-foreground: 100 116 139;     /* #64748b */
+  --accent: 241 245 249;               /* #f1f5f9 */
+  --accent-foreground: 15 23 42;       /* #0f172a */
+  --destructive: 239 68 68;            /* #ef4444 */
+  --destructive-foreground: 255 255 255;
+  --border: 226 232 240;               /* #e2e8f0 */
+  --input: 226 232 240;                /* #e2e8f0 */
+  --ring: 91 154 225;                  /* #5B9AE1 */
+  --success: 22 163 74;                /* #16a34a */
+  
+  /* Cores Oasis específicas */
+  --oasis-blue: 91 154 225;            /* #5B9AE1 */
+  --oasis-blue-dark: 74 139 216;       /* #4A8BD8 */
+  --oasis-blue-light: 239 246 255;     /* #EFF6FF */
+  --oasis-gelo: 252 253 254;           /* #FCFDFE - o "gelo" super sutil */
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Transições naturais e suaves */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Scrollbar ultra minimalista */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--muted-foreground) / 0.2);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--muted-foreground) / 0.4);
+}
+
+/* Classes utilitárias */
+.text-oasis-blue {
+  color: rgb(var(--oasis-blue));
+}
+
+.bg-oasis-blue {
+  background-color: rgb(var(--oasis-blue));
+}
+
+.border-oasis-blue {
+  border-color: rgb(var(--oasis-blue));
+}
+
+.bg-oasis-gelo {
+  background-color: rgb(var(--oasis-gelo));
+}
+
+/* Animações suaves */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 300ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 200ms ease-out;
+}
+
+/* Foco mais natural */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgb(var(--oasis-blue) / 0.5);
+  outline-offset: 2px;
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: rgb(var(--oasis-blue) / 0.2);
+  color: rgb(var(--foreground));
+}
+
+/* Melhorar a experiência com imagens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hover states mais naturais */
+button, a {
+  cursor: pointer;
+}
+
+button:disabled, 
+a:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Loading states */
+.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Animações para Notificação Toast */
+@layer utilities {
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes progress {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .animate-progress {
+    animation: progress 5s linear forwards;
+  }
+}

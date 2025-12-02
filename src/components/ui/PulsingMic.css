@@ -1,0 +1,4 @@
+.pulsing-mic-size {
+  width: var(--pulsing-mic-size);
+  height: var(--pulsing-mic-size);
+}
