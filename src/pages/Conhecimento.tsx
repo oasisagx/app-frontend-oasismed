@@ -31,7 +31,7 @@ const showNotification = (message: string, type: 'success' | 'error' = 'success'
     <button onclick="this.parentElement.remove()" class="ml-2 font-bold text-white hover:text-white/80 transition-colors cursor-pointer flex-shrink-0" aria-label="Fechar notificação" style="font-size: 18px; line-height: 1;">×</button>
   `;
   document.body.appendChild(notification);
-  setTimeout(() => notification.parentElement?.remove(), 20000);
+  setTimeout(() => notification.remove(), 20000);
 };
 
 const showErrorNotification = (title: string, message: string) => {
@@ -59,7 +59,7 @@ const showErrorNotification = (title: string, message: string) => {
     <button onclick="this.parentElement.remove()" class="ml-2 font-bold text-white hover:text-white/80 transition-colors cursor-pointer flex-shrink-0" aria-label="Fechar notificação" style="font-size: 18px; line-height: 1;">×</button>
   `;
   document.body.appendChild(notification);
-  setTimeout(() => notification.parentElement?.remove(), 30000); // Increased timeout for longer messages
+  setTimeout(() => notification.remove(), 30000); // Increased timeout for longer messages
 };
 
 // Component to display document status based on d_status
