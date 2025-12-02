@@ -2,51 +2,6 @@
 
 React + TypeScript + Vite frontend for Oasis Med medical platform.
 
-## 🚀 Deployment to Vercel
-
-### Prerequisites
-
-1. GitHub account
-2. Vercel account (connected to GitHub)
-3. Backend API already deployed on AWS
-
-### Step 1: Push to GitHub
-
-```bash
-# Initialize git if not already done
-git init
-
-# Add all files
-git add .
-
-# Commit
-git commit -m "Prepare for Vercel deployment"
-
-# Add remote (replace with your repo URL)
-git remote add origin https://github.com/YOUR_USERNAME/eomed-interface.git
-
-# Push to GitHub
-git push -u origin main
-```
-
-### Step 2: Deploy on Vercel
-
-1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
-2. Click "Add New" > "Project"
-3. Import your GitHub repository
-4. Configure project settings:
-   - **Framework Preset**: Vite
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-5. Add Environment Variables (see below)
-6. Click "Deploy"
-
-### Step 3: Configure Custom Domain
-
-1. In Vercel project settings, go to "Domains"
-2. Add your custom domain: `oasismed.oasisagx.com`
-3. Follow Vercel's instructions to configure DNS
-
 ## ⚙️ Environment Variables
 
 Configure these in Vercel Project Settings > Environment Variables:
@@ -75,21 +30,6 @@ After deployment, your app will be available at:
 - **Main**: `https://www.oasismed.oasisagx.com/main`
 - **Other routes**: Same domain with corresponding paths
 
-## 🛠️ Local Development
-
-```bash
-# Install dependencies
-npm install
-
-# Create .env file with variables above
-# (copy values from Environment Variables section)
-
-# Start development server
-npm run dev
-```
-
-The dev server runs at `http://localhost:5173` with API proxy configured.
-
 ## 📁 Project Structure
 
 ```
@@ -101,14 +41,4 @@ src/
 ├── lib/            # API services and utilities
 ├── pages/          # Route pages
 └── types/          # TypeScript types
-```
-
-## 🔧 Build
-
-```bash
-# Build for production
-npm run build
-
-# Preview production build locally
-npm run preview
 ```
